@@ -23,6 +23,7 @@
 
 #include "absl/status/statusor.h"
 #include "xls/ir/package.h"
+// #include "xls/passes/add_inverter_pass.h"
 #include "xls/passes/arith_simplification_pass.h"
 #include "xls/passes/array_simplification_pass.h"
 #include "xls/passes/bdd_cse_pass.h"
@@ -68,6 +69,7 @@ namespace xls {
 SimplificationPass::SimplificationPass(int64_t opt_level)
     : OptimizationFixedPointCompoundPass("simp", "Simplification") {
   Add<IdentityRemovalPass>();
+  // Add<AddInverterPass>();
   Add<ConstantFoldingPass>();
   Add<DeadCodeEliminationPass>();
   Add<CanonicalizationPass>();
@@ -86,6 +88,7 @@ SimplificationPass::SimplificationPass(int64_t opt_level)
   Add<DeadCodeEliminationPass>();
   Add<ReassociationPass>();
   Add<DeadCodeEliminationPass>();
+  // Add<AddInverterPass>();
   Add<ConstantFoldingPass>();
   Add<DeadCodeEliminationPass>();
   Add<BitSliceSimplificationPass>(opt_level);

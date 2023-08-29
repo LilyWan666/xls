@@ -24,6 +24,7 @@ cc_library(
     srcs = ["optimization_pass_pipeline.cc"],
     hdrs = ["optimization_pass_pipeline.h"],
     deps = [
+        # ":add_inverter_pass",
         ":arith_simplification_pass",
         ":array_simplification_pass",
         ":bdd_cse_pass",
@@ -67,6 +68,21 @@ cc_library(
         "//xls/ir",
     ],
 )
+
+# cc_library(
+#     name = "add_inverter_pass",
+#     srcs = ["add_inverter_pass.cc"],
+#     hdrs = ["add_inverter_pass.h"],
+#     deps = [
+#         ":passes",
+#         "@com_google_absl//absl/status:statusor",
+#         "//xls/common/logging",
+#         "//xls/common/status:status_macros",
+#         "//xls/interpreter:ir_interpreter",
+#         "//xls/ir",
+#         "//xls/ir:type",
+#     ],
+# )
 
 cc_library(
     name = "verifier_checker",
