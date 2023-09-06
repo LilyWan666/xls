@@ -69,7 +69,6 @@ namespace xls {
 SimplificationPass::SimplificationPass(int64_t opt_level)
     : OptimizationFixedPointCompoundPass("simp", "Simplification") {
   Add<IdentityRemovalPass>();
-  // Add<AddInverterPass>();
   Add<ConstantFoldingPass>();
   Add<DeadCodeEliminationPass>();
   Add<CanonicalizationPass>();
@@ -88,7 +87,6 @@ SimplificationPass::SimplificationPass(int64_t opt_level)
   Add<DeadCodeEliminationPass>();
   Add<ReassociationPass>();
   Add<DeadCodeEliminationPass>();
-  // Add<AddInverterPass>();
   Add<ConstantFoldingPass>();
   Add<DeadCodeEliminationPass>();
   Add<BitSliceSimplificationPass>(opt_level);
@@ -192,6 +190,7 @@ std::unique_ptr<OptimizationCompoundPass> CreateOptimizationPassPipeline(
   top->Add<LiteralUncommoningPass>();
   top->Add<DeadFunctionEliminationPass>();
   top->Add<LabelRecoveryPass>();
+  // top->Add<AddInverterPass>();
   return top;
 }
 

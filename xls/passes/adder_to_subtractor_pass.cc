@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "xls/passes/add_inverter_pass.h"
+#include "xls/passes/adder_to_subtractor_pass.h"
 
 // #include <algorithm>
 // #include <vector>

@@ -748,6 +748,44 @@ cc_binary(
     ],
 )
 
+cc_binary(
+    name = "fault_injection_main",
+    srcs = ["fault_injection_main.cc"],
+    visibility = ["//xls:xls_users"],
+    deps = [
+        ":fault_injection",
+        "//xls/common:exit_status",
+        "//xls/common:init_xls",
+        "//xls/common/file:filesystem",
+        "//xls/common/logging",
+        "//xls/common/status:status_macros",
+        "//xls/ir:ram_rewrite_cc_proto",
+        "//xls/passes:optimization_pass",
+        "//xls/passes:pass_base",
+        "@com_google_absl//absl/status",
+        "@com_google_absl//absl/strings:str_format",
+    ],
+)
+
+cc_library(
+    name = "fault_injection",
+    srcs = ["fault_injection.cc"],
+    hdrs = ["fault_injection.h"],
+    visibility = ["//xls:xls_users"],
+    deps = [
+        "//xls/common/status:status_macros",
+        "//xls/dslx:parse_and_typecheck",
+        "//xls/dslx/ir_convert:ir_converter",
+        "//xls/ir",
+        "//xls/ir:ir_parser",
+        "//xls/passes:optimization_pass",
+        # "//xls/passes:optimization_pass_pipeline",
+        "//xls/passes:fault_injection_pass_pipeline",
+        "@com_google_absl//absl/status",
+        "@com_google_absl//absl/status:statusor",
+    ],
+)
+
 py_test(
     name = "opt_main_test",
     srcs = ["opt_main_test.py"],

@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef XLS_PASSES_ADD_INVERTER_PASS_H_
-#define XLS_PASSES_ADD_INVERTER_PASS_H_
+#ifndef XLS_PASSES_ADDER_TO_SUBTRACTOR_PASS_H_
+#define XLS_PASSES_ADDER_TO_SUBTRACTOR_PASS_H_
 
 #include "absl/status/statusor.h"
 #include "xls/ir/function.h"
@@ -25,7 +25,7 @@ namespace xls {
 // replaced by a equivalent literal. Runs DCE after constant folding.
 class AddInverterPass : public OptimizationFunctionBasePass {
  public:
-  AddInverterPass() : OptimizationFunctionBasePass("add_inverter", "Add inverter nodes") {}
+  AddInverterPass() : OptimizationFunctionBasePass("adder_to_subtractor_pass", "Adder to Subtractor Pass") {}
   ~AddInverterPass() override = default;
 
  protected:
