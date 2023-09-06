@@ -29,7 +29,7 @@
 #include "xls/ir/verifier.h"
 #include "xls/passes/optimization_pass.h"
 // #include "xls/passes/optimization_pass_pipeline.h"
-#include "xls/passes/fault_injection_pass_pipeline.h"
+#include "xls/fault_injection/fault_injection/fault_injection_pass_pipeline.h"
 
 namespace xls::tools {
 

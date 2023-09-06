@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "xls/passes/add_inverter_pass.h"
+#include "xls/fault_injection/fault_injection/add_inverter_pass.h"
 
 // #include <algorithm>
 // #include <vector>

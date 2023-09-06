@@ -15,7 +15,7 @@
 // Create a standard pipeline of passes. This pipeline should
 // be used in the main driver as well as in testing.
 
-#include "xls/passes/fault_injection_pass_pipeline.h"
+#include "xls/fault_injection/fault_injection/fault_injection_pass_pipeline.h"
 
 #include <algorithm>
 #include <cstdint>
@@ -23,7 +23,7 @@
 
 #include "absl/status/statusor.h"
 #include "xls/ir/package.h"
-#include "xls/passes/add_inverter_pass.h"
+#include "xls/fault_injection/fault_injection/add_inverter_pass.h"
 // #include "xls/passes/arith_simplification_pass.h"
 // #include "xls/passes/array_simplification_pass.h"
 // #include "xls/passes/bdd_cse_pass.h"

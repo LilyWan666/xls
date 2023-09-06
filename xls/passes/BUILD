@@ -70,32 +70,6 @@ cc_library(
 )
 
 cc_library(
-    name = "fault_injection_pass_pipeline",
-    srcs = ["fault_injection_pass_pipeline.cc"],
-    hdrs = ["fault_injection_pass_pipeline.h"],
-    deps = [
-        ":add_inverter_pass",
-        "@com_google_absl//absl/status:statusor",
-        "//xls/ir",
-    ],
-)
-
-cc_library(
-    name = "add_inverter_pass",
-    srcs = ["add_inverter_pass.cc"],
-    hdrs = ["add_inverter_pass.h"],
-    deps = [
-        ":optimization_pass",
-        "@com_google_absl//absl/status:statusor",
-        "//xls/common/logging",
-        "//xls/common/status:status_macros",
-        "//xls/interpreter:ir_interpreter",
-        "//xls/ir",
-        "//xls/ir:op",
-    ],
-)
-
-cc_library(
     name = "verifier_checker",
     srcs = ["verifier_checker.cc"],
     hdrs = ["verifier_checker.h"],
