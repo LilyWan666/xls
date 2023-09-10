@@ -232,6 +232,7 @@ def graph_handler():
   """Parses the posted text and returns a parse status."""
   text = flask.request.form['text']
   try:
+    # "unit", 1, "your_top"
     json_text = ir_to_json.ir_to_json(text, FLAGS.delay_model,
                                       FLAGS.pipeline_stages, FLAGS.top)
   except Exception as e:  # pylint: disable=broad-except
